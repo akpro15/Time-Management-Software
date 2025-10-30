@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Time Management Software</title>
+  <style>
+
+    body {
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      padding: 25px;
+      border-radius: 0px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .task-input {
+      margin-bottom: 20px;
+    }
+
+    .task-input input {
+      padding: 10px;
+    }
+
+    .task-input button {
+      background: #42ca47;
+      border: none;
+      padding: 10px 20px;
+    }
+
+    li {
+      padding: 10px 15px;
+      align-items: center;
+    }
+
+    .completed {
+      text-decoration: line-through;
+    }
+    
+    .delete-btn {
+      color: red;
+    }
+
+    .complete-btn {
+      color: green;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Time Management Software</h1>
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Enter your task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+    <footer>Developed by Aditya Kumar</footer>
+  </div>
+
+  <script>
+    function addTask() {
+      let input = document.getElementById("taskInput");
+      let taskText = input.value.trim();
+
+      let li = document.createElement("li");
+      li.innerHTML = `
+        <span class="task">${taskText}</span>
+        <div class="actions">
+        </div>
+      `;
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+
+  </script>
+</body>
+</html>
